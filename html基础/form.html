@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 1px solid;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" id="box">
+        <p>label标签 ,点击文本标记之一就可以触发控件</p>
+        <form>
+            <label for="male">男</label>
+            <input type="radio" name="sex" value="male" id="male">
+            <br>
+            <label for="female">女</label>
+            <input type="radio" name="sex" value="female" id="female">
+            <br>
+            <label for="adult">成年人</label>
+            <input type="radio" name="age" value="adult" id="adult">
+            <br>
+            <label for="child">少年</label>
+            <input type="radio" name="age" value="child" id="child">
+        </form>
+    </div>
+    <div class="box2" id="box">
+        <form action="./form2.html" method="post">
+            <div>
+                <label for="name">姓名</label>
+                <input type="text" name="username" id="name">
+            </div>
+            <div>
+                <label for="password">密码</label>
+                <input type="password" name="user-password" id="password">
+            </div>
+            <input type="submit">
+            <button>提交2</button>
+            <input type="button" value="提交3">
+        </form>
+    </div>
+    <div class="box3" id="box">
+        <form action="#">
+            <input type="checkbox" name="vehicle" value="Bike"> i have a bike
+            <input type="checkbox" name="vehicle" value="car"> i have a car
+            <input type="checkbox" name="vehicle" value="airplane"> i have a airplane
+            <input type="submit">
+        </form>
+    </div>
+    <div class="box4" id="box">
+        <form action="#">
+            Email: <input type="text" name="email">
+            <br>
+            <input type="hidden" name="conutry">
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="box5" id="box">
+        <form action="#">
+            Email: <input type="text" name="email" /><br />
+            Pin: <input type="text" name="pin" maxlength="4" /><br />
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <div class="box6" id="box">
+        <form>
+            <fieldset>
+                <legend>健康信息</legend>
+                身高：<input type="text" />
+                体重：<input type="text" />
+            </fieldset>
+        </form>
+    </div>
+    <div class="box7">
+        <form>
+            <input type="search">
+        </form>
+    </div>
+</body>
+</html>

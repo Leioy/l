@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin:0;padding: 0;box-sizing: border-box;}
+        ul{list-style: none;}
+        a{color: inherit;text-decoration: none;}
+        .search-list a {
+            display: flex;
+            padding-left: 8px;
+            align-items: center;
+        }
+        .description {
+            flex: 1;
+            position: relative;
+            display: flex;
+        }
+        .description::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            z-index: 0;
+            transform: scale(.5);
+            transform-origin: top left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            pointer-events: none;
+        }
+        li {
+            height: 45px;
+        }
+        .info {
+            flex: 1 1 auto;
+            widows: 0;
+            padding: 6px 0;
+            align-items: center;
+        }
+        h3 {
+            font-size: 17px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p {
+            font-size: 12px;
+            color: #888;
+        }
+        i {
+            display: inline-block;
+            width: 16px;
+            height: 9px;
+            background: red;
+        }
+        .img {
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="search-result">
+        <li class="search-list list-common">
+            <a href="javaScript:void(0)">
+                <div class="description">
+                    <div class="info">
+                        <h3>理想三寻</h3>
+                        <p><i class="icon-sq"></i>谢春花 - 音乐好朋友（第一季）</p>
+                    </div>
+                    <div class="img">
+                        <span class="icon"></span>
+                    </div>
+                </div>
+        </li>
+    </a>
+    </ul>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        class Tabs{
+            constructor(el){
+                this.$el = el 
+                this.$el.on('click',this.bindEvent.bind(this))
+            }
+            bindEvent(e){
+                if(e.target.matches('li')){
+                    console.log(1)
+                }
+                if(e.target.matches('h3')){
+                    console.log('h3 被点击了')
+                }
+                if(e.target.matches('.info')){
+                    console.log('info 被点击了')
+                }
+            }
+        }
+
+        new Tabs($('.search-result'))
+    </script>
+</body>
+
+</html>
