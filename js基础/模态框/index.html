@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .modal-ct {
+            display: none;
+        }
+        .modal-ct.active {
+            display: block;
+        }
+        .cover {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #000;
+            opacity: .5;
+            z-index: 1;
+        }
+        .modal {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 150px;
+            border: 1px solid;
+            background: #fff;
+            z-index: 2
+        }
+        .header {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+        .header .close {
+            cursor: pointer;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 10px;
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+        }
+        .footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+        .footer > span {
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-ct">
+        <div class="cover"></div>
+        <div class="modal">
+            <div class="header">
+                <h3>我是标题1</h3>
+                <span class="close">X</span>
+            </div>
+            <div class="content">
+                <p>我是内容1</p>
+                <p>我是内容2</p>
+            </div>
+            <div class="footer">
+                <span class="cancle">取消</span>
+                <span class="confirm">确定</span>
+            </div>
+        </div>
+    </div>
+    <button id="button">click</button>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script >
+        $('#button').on('click',()=>{
+            $('.modal-ct').addClass('active')
+        })
+        $('.modal').on('click',(e)=>{
+            if(e.target.matches('.close') || e.target.matches('.cancle')){
+                $('.modal-ct').removeClass('active')
+            }
+        })
+    </script>
+    
+</body>
+</html>
